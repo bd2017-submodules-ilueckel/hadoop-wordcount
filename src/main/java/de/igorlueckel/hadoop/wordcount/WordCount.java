@@ -34,7 +34,6 @@ public class WordCount extends Configured implements Tool {
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-        job.waitForCompletion(true);
         boolean success = job.waitForCompletion(true);
         return success ? 0 : 1;
     }
